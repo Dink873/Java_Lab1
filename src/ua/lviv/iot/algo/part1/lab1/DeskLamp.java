@@ -1,26 +1,31 @@
 package ua.lviv.iot.algo.part1.lab1;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
+import lombok.*;
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
-@ToString
-public class DeskLamp {
+@ToString(callSuper=true)
+class DeskLamp extends ua.lviv.iot.algo.part1.lab1.Light {
     private boolean isOn;
     private int brightness;
     private String color;
-    private String producer;
 
-    public DeskLamp(boolean b, int i, String white, String unknown) {
+    public DeskLamp ( String producer, int workingHours,boolean isOn, int brightness, String color ){
+        super(producer, workingHours);
+        this.isOn = isOn;
+        this.brightness = brightness;
+        this.color = color;
     }
 
+
+    @Override
     public void turnOn() {
         isOn = true;
         System.out.println("The lamp is on.");
     }
 
+    @Override
     public void turnOff() {
         isOn = false;
         System.out.println("The lamp is off.");
@@ -38,13 +43,5 @@ public class DeskLamp {
     public void setColor(String color) {
         this.color = color;
         System.out.println("The color has been set to " + color + ".");
-    }
-
-
-
-    public static void main(String [] args) {
-        DeskLamp deskLamp = new DeskLamp(false, 5, "white", "Unknown");
-        deskLamp.setBrightness(5);
-        deskLamp.setColor("Yellow");
     }
 }
