@@ -1,0 +1,8 @@
+producer, workingHours,isOn,brightness,color
+Китай,24,false,5,white
+producer, workingHours,isOn,brightness,color
+Україна,48,true,8,black
+producer, workingHours,isLit
+Китай,2,true
+producer, workingHours,isLit
+Україна,5,false
